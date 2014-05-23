@@ -67,7 +67,6 @@ public class NewsReader {
 	public ArrayList<Task> processNews() throws Exception {
 		ArrayList<Task> tasks = new ArrayList<Task>();
 		HeadlineGenerator hg = new HeadlineGenerator();
-		HashMap<String, String> firstSentences = new HashMap<>();
 		HashMap<String, String> peers;
 		ArrayList<String> models;
 		
@@ -88,7 +87,6 @@ public class NewsReader {
 						peers.put("first_sentence_naive_"+ folder.getName() +"_"+ newsFile.getName(), headline);
 						
 						headline = hg.getFirstSentence(fileContents);
-						firstSentences.put(newsFile.getName(), headline);
 						peers.put("first_sentence_"+ folder.getName() +"_"+ newsFile.getName(), headline);
 						
 						// getting the models of the current news
