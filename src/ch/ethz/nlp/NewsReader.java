@@ -79,7 +79,7 @@ public class NewsReader {
 				File currentFolderListOfFiles[] = folder.listFiles();
 				// loop through all news in a folder
 				for (File newsFile : currentFolderListOfFiles) {
-					if (!newsFile.isDirectory()) {
+					if (!newsFile.isDirectory() && newsFile.getName().charAt(0) != '.') {
 						peers = new HashMap<>();
 						String fileContents = hg.getTextTagContent(getFileContent(newsFile));
 						
