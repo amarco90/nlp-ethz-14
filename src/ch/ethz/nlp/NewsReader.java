@@ -67,7 +67,7 @@ public class NewsReader {
 	public ArrayList<Task> processNews() throws Exception {
 		ArrayList<Task> tasks = new ArrayList<Task>();
 		HeadlineGenerator hg = new HeadlineGenerator();
-		HashMap<String, String> peers;
+		LinkedHashMap<String, String> peers;
 		ArrayList<String> models;
 		
 		File listOfFolders[] = new File(NEWS_PATH).listFiles();
@@ -79,7 +79,7 @@ public class NewsReader {
 				// loop through all news in a folder
 				for (File newsFile : currentFolderListOfFiles) {
 					if (!newsFile.isDirectory() && newsFile.getName().charAt(0) != '.') {
-						peers = new HashMap<>();
+						peers = new LinkedHashMap<>();
 						String fileContents = hg.getTextTagContent(getFileContent(newsFile));
 						
 						// generate headlines here and add them to the map

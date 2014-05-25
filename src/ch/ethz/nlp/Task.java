@@ -17,11 +17,11 @@ public class Task {
 	
 	/** The key of the HashMap is the name of the file that is going to 
 	 * be created, the value is the generated headline */
-	HashMap<String, String> peers;
+	LinkedHashMap<String, String> peers;
 	/** The models associated to the current peers */
 	ArrayList<String> models;
 	
-	public Task(HashMap<String, String> peers, ArrayList<String> models){
+	public Task(LinkedHashMap<String, String> peers, ArrayList<String> models){
 		this.peers = peers;
 		this.models = models;
 	}
